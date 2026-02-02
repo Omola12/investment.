@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoSphere | Investment Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="index.html" class="logo">
+                <i class="fas fa-coins"></i>
+                <span>CryptoSphere</span>
+            </a>
+            
+            <div class="main-nav">
+                <a href="index.html" class="nav-link active">Dashboard</a>
+                <a href="#investments" class="nav-link">Investments</a>
+                <a href="#wallet" class="nav-link">Wallet</a>
+                <a href="admin.html" class="nav-link">Admin</a>
+            </div>
+            
+            <div class="user-info">
+                <div class="balance-card">
+                    <div>Total Balance</div>
+                    <div class="balance-amount">$<span id="totalBalance">45,287.50</span></div>
+                </div>
+                <div class="balance-card">
+                    <div>Today's Profit</div>
+                    <div class="balance-amount positive">+$<span id="dailyProfit">1,245.30</span></div>
+                </div>
+                <a href="login.html" class="secondary-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <div class="dashboard-content">
+            <!-- Welcome Banner -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Welcome back, John! 👋</h2>
+                    <button class="primary-btn" onclick="openDepositModal()">
+                        <i class="fas fa-wallet"></i> Deposit Funds
+                    </button>
+                </div>
+                <p style="opacity: 0.9; margin-bottom: 20px;">
+                    Your investments are performing well today. Total profit increased by 2.7% in the last 24 hours.
+                </p>
+            </div>
+
+            <!-- Crypto Investments -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Your Crypto Portfolio</h2>
+                    <span class="positive">+$1,245.30 (2.7%) Today</span>
+                </div>
+                <div class="crypto-grid">
+                    <!-- Bitcoin -->
+                    <div class="crypto-card">
+                        <div class="crypto-header">
+                            <div class="crypto-name">
+                                <i class="fab fa-bitcoin" style="color: #f7931a;"></i>
+                                <span>Bitcoin (BTC)</span>
+                            </div>
+                            <div class="crypto-price">$42,156.78</div>
+                        </div>
+                        <div class="crypto-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+3.2%</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <div>Your Holdings: <strong>0.85 BTC</strong></div>
+                            <div>Value: <strong class="positive">$35,833.26</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Ethereum -->
+                    <div class="crypto-card">
+                        <div class="crypto-header">
+                            <div class="crypto-name">
+                                <i class="fab fa-ethereum" style="color: #627eea;"></i>
+                                <span>Ethereum (ETH)</span>
+                            </div>
+                            <div class="crypto-price">$2,856.42</div>
+                        </div>
+                        <div class="crypto-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+1.8%</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <div>Your Holdings: <strong>4.2 ETH</strong></div>
+                            <div>Value: <strong class="positive">$11,996.96</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Cardano -->
+                    <div class="crypto-card">
+                        <div class="crypto-header">
+                            <div class="crypto-name">
+                                <i class="fas fa-chart-line" style="color: #0033ad;"></i>
+                                <span>Cardano (ADA)</span>
+                            </div>
+                            <div class="crypto-price">$0.52</div>
+                        </div>
+                        <div class="crypto-change negative">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>-0.5%</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <div>Your Holdings: <strong>5,200 ADA</strong></div>
+                            <div>Value: <strong>$2,704.00</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Solana -->
+                    <div class="crypto-card">
+                        <div class="crypto-header">
+                            <div class="crypto-name">
+                                <i class="fas fa-sun" style="color: #00ffa3;"></i>
+                                <span>Solana (SOL)</span>
+                            </div>
+                            <div class="crypto-price">$102.67</div>
+                        </div>
+                        <div class="crypto-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+5.7%</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <div>Your Holdings: <strong>22 SOL</strong></div>
+                            <div>Value: <strong class="positive">$2,258.74</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="card">
+                <h2 class="card-title">Investment Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-wallet" style="font-size: 2rem; color: var(--primary);"></i>
+                        <div>Total Deposits</div>
+                        <div class="stat-value">$52,000</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-money-bill-wave" style="font-size: 2rem; color: var(--warning);"></i>
+                        <div>Total Withdrawals</div>
+                        <div class="stat-value">$6,712.50</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--success);"></i>
+                        <div>Total Profit</div>
+                        <div class="stat-value positive">$14,287.50</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-percentage" style="font-size: 2rem; color: var(--secondary);"></i>
+                        <div>ROI</div>
+                        <div class="stat-value positive">27.5%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deposit Modal -->
+    <div id="depositModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeDepositModal()">&times;</span>
+            <h2 style="margin-bottom: 20px;">Deposit Funds via Wallet</h2>
+            <p style="margin-bottom: 15px; opacity: 0.9;">Send USD (USDT, USDC) to this wallet address:</p>
+            
+            <div class="wallet-address">
+                0x742d35Cc6634C0532925a3b844Bc9eEe0A3C3e66
+            </div>
+            
+            <div style="margin: 25px 0; padding: 15px; background: rgba(67, 97, 238, 0.1); border-radius: 12px;">
+                <i class="fas fa-info-circle" style="color: var(--primary);"></i>
+                <span style="margin-left: 10px;">
+                    Minimum deposit: $100. Deposits are credited within 15 minutes after 3 confirmations.
+                </span>
+            </div>
+            
+            <button class="primary-btn" style="width: 100%;" onclick="copyWalletAddress()">
+                <i class="far fa-copy"></i> Copy Wallet Address
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
