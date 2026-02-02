@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoSphere | Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="index.html" class="logo">
+                <i class="fas fa-coins"></i>
+                <span>CryptoSphere Admin</span>
+            </a>
+            
+            <div class="user-info">
+                <div class="balance-card">
+                    <div>Admin Access</div>
+                    <div style="font-weight: 600; color: var(--primary);">
+                        <i class="fas fa-user-shield"></i> Super Admin
+                    </div>
+                </div>
+                <a href="index.html" class="secondary-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+        </header>
+
+        <!-- Admin Content -->
+        <div class="admin-grid">
+            <!-- Sidebar -->
+            <div class="admin-sidebar">
+                <div class="admin-nav">
+                    <a href="admin.html" class="nav-item active">
+                        <i class="fas fa-users"></i>
+                        <span>User Management</span>
+                    </a>
+                    <a href="#transactions" class="nav-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="#deposits" class="nav-item">
+                        <i class="fas fa-wallet"></i>
+                        <span>Deposit Requests</span>
+                    </a>
+                    <a href="#withdrawals" class="nav-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Withdrawal Requests</span>
+                    </a>
+                    <a href="#settings" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>System Settings</span>
+                    </a>
+                    <a href="#reports" class="nav-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports & Analytics</span>
+                    </a>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px;">
+                    <h4 style="margin-bottom: 15px;">Quick Stats</h4>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>Total Users:</span>
+                        <strong>1,247</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span>Active Today:</span>
+                        <strong class="positive">342</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Total Deposits:</span>
+                        <strong>$4.2M</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- User Management -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-users-cog"></i> User Management
+                        </h2>
+                        <div style="display: flex; gap: 15px;">
+                            <input type="text" class="form-input" placeholder="Search users..." style="width: 250px;">
+                            <button class="primary-btn">
+                                <i class="fas fa-user-plus"></i> Add User
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="user-list">
+                        <!-- User 1 -->
+                        <div class="user-item">
+                            <div>
+                                <div style="font-weight: 600; font-size: 1.1rem;">John Doe</div>
+                                <div style="font-size: 0.9rem; opacity: 0.7;">demo@cryptosphere.com</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.9rem; opacity: 0.7;">Status</div>
+                                <div style="color: var(--success); font-weight: 600;">
+                                    <i class="fas fa-circle" style="font-size: 0.7rem;"></i> Active
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.9rem; opacity: 0.7;">Balance</div>
+                                <div>
+                                    <input type="text" class="user-balance-input" value="45287.50" data-user="user1">
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.9rem; opacity: 0.7;">Last Login</div>
+                                <div style="font-weight: 600;">Today</div>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <button class="save-btn" onclick="updateUserBalance('user1')">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                                <button class="secondary-btn" onclick="showUserDetails('user1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- User 2 -->
+                        <div class="user-item">
+                            <div>
+                                <div style="font-weight: 600; font-size: 1.1rem;">Jane Smith</div>
+                                <div style="font-size: 0.9rem; opacity: 0.7;">jane@example.com</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.9rem; opacity: 0.7;">Status</div>
+                                <div style="color: var(--success); font-weight: 600;">
+                                    <i class="fas fa-circle" style="font-size: 0.7rem;"></i> Active
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.9rem; opacity: 
