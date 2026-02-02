@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoSphere | Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p class="auth-subtitle">Sign in to your CryptoSphere account</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" style="cursor: pointer;">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="auth-link">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="primary-btn" style="width: 100%;">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="signup.html" class="auth-link">Sign up here</a></p>
+                <p style="margin-top: 15px; opacity: 0.7;">
+                    <i class="fas fa-shield-alt"></i> Your data is protected with 256-bit encryption
+                </p>
+            </div>
+            
+            <div style="margin-top: 30px; text-align: center;">
+                <p style="opacity: 0.7; margin-bottom: 15px;">Demo Credentials:</p>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; font-size: 0.9rem;">
+                    <div>Email: demo@cryptosphere.com</div>
+                    <div>Password: demo123</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Demo validation
+            if (email && password) {
+                showToast('Login successful! Redirecting...');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                showToast('Please fill in all fields', 'error');
+            }
+        });
+    </script>
+</body>
+</html>
